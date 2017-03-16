@@ -1,0 +1,95 @@
+body {
+}
+
+.twit{
+    border: 1px;
+    border-color:rgba(0, 0, 0, .3);
+    border-radius: 5px;
+    height: fit-content;
+    font-family: Arial;
+    display: block;
+    background-color: #fff;
+    box-shadow: 3px 3px rgba(0, 0, 0, .3);
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+
+.handle{
+    font: bold 15px 'Century Gothic'; 
+    color: #00aced;
+}
+
+
+.twit img{
+    border-radius: 5px;
+    border: 0px;
+    height: 1%;
+    width: 1%;
+    
+        
+}
+
+.creator{
+    margin-top: 0%;
+    color: black;
+}
+#tweeet{
+    height: 25px;
+    width:  25px;
+    float: left;
+}
+
+.content{
+    font-size: small;
+    font-family:'Century Gothic';
+    
+}
+
+#in{
+    width: 57%;
+    margin-left: 3%;
+    display: inline;
+}
+
+#bt {
+    width: 30%;
+    top: 0px;
+    display: inline-block;
+    padding: 0 20px;
+    margin-right: 1px;
+    font: normal 12px 'Century Gothic';
+    line-height: 24px;
+    color: white;
+    border: 0px;
+    border-radius: 10px;
+    background-color: #005555;
+    text-decoration: none;
+    transition: all 0.3s ease-out;
+    
+}
+#bt:hover{
+    cursor: pointer;
+    color: #5FD367;
+    box-shadow: 3px 3px rgba(0, 0, 0, .3);
+}
+
+::-webkit-scrollbar-track
+{
+	
+	border-radius: 5px;
+	background-color: #FFF;
+}
+
+::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: #FFF;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 15px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color:#005555;
+}

@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Twitter Helper for WebMatrix - Start Here</title>
+    <link href="content/Site.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="content/images/webx-icon.png" alt="WebMatrix" />
+            <img src="content/images/twitter-logo.png" alt="Twitter Logo" class="partnerLogo" />
+            <h1>
+                Microsoft WebMatrix Helpers</h1>
+            <h2>
+                Twitter Helper - Start Here</h2>
+        </div>
+        <div class="content">
+            <div class="navLinks">
+                <a href="startHere.htm">Start Here</a> | <a href="reference.htm">Helper Reference</a>
+            </div>
+            <h3>
+                Introduction</h3>
+            <p>
+                Microsoft WebMatrix provides an easy way to get started with web development, and
+                together with new Razor syntax for ASP.NET Web Pages it includes everything you
+                need to get your web site up, running and integrated with many other sites and networks,
+                in a short period of time. The WebMatrix helpers are designed to make your life
+                easier when creating web sites. They provide you a simple and consistent way of
+                performing common web development tasks that otherwise would require a great deal
+                of custom coding. With a few lines of code you should be able to secure your web
+                site using membership, store information in Windows Azure Storage, integrate your
+                site with Facebook, among others things.
+            </p>
+            <p>
+                The <strong>Twitter Helper</strong> for WebMatrix makes it simple to integrate several
+                Twitter social features in your site. For example, you can display Twitter widgets
+                like "Follow Me" and "Tweet" buttons, and access the Timeline Resources exposed
+                by the Twitter API in a few lines of code.
+            </p>
+            <p>
+                Depending on the helper feature you want to use, the helper requires that you call
+                an initialization method. See the reference page to check each case. If you're using
+                helper methods without initialization see the <strong>Getting Started in 60 seconds
+                    (without initialization)</strong> section, otherwise see the <strong>Getting Started
+                        in 60 seconds (with initialization)</strong> section.
+            </p>
+            <h3>
+                Getting Started in 60 Seconds (without Initialization)</h3>
+            <p>
+                To try the helper in any WebMatrix page, add the following line to display a "Search"
+                Widget:</p>
+            <pre class="code">
+@Twitter.Search("webmatrix")
+</pre>
+            <h3>
+                Getting Started in 60 Seconds (with Initialization)</h3>
+            <p>
+                These steps will guide you on how to display the Twitter public timeline in your
+                site:
+            </p>
+            <ol>
+                <li><a href="http://dev.twitter.com/apps/new">Register</a> a new Twitter application
+                    and make note of the consumer key and secret.<br />
+                    <img alt="Application Url" src="content/images/register-application.png" width="700px"
+                        class="centeredImage withMargin" />
+                </li>
+                <li>Add the following line to the <strong>_AppStart.cshtml</strong> page of your WebMatrix
+                    Site (if the file does not already exist, create it in the root of the website).
+                    Replace the placeholders with your Twitter consumer key and secret.
+                    <pre class="code">@{
+    Twitter.Initialize("{consumer-key}", "{consumer-secret}");    
+}</pre>
+                </li>
+                <li>In any WebMatrix page, add the following code to display the Twitter public timeline:
+                    <pre class="code">
+@{
+    var timeline = Twitter.GetPublicTimeline();
+    var grid = new WebGrid(timeline, columnNames : new []{"Text"});
+}
+...
+@grid.GetHtml()
+</pre>
+                </li>
+            </ol>
+            <h3>
+                Running the Twitter Helper Sample</h3>
+            <p>
+                Optionally, you can download a sample WebMatrix web site where you can see the helper
+                in action. This sample also demonstrates how to handle <strong>Twitter login</strong>
+                with the helper, to be able to display your users tweets in your site. To download
+                and run it with Microsoft WebMatrix, follow these steps:</p>
+            <ol>
+                <li>Download the sample site from the helper's <a href="http://twitterhelper.codeplex.com">
+                    Codeplex</a> site, Downloads section. Extract the contents and open the folder in
+                    WebMatrix.</li>
+                <li>Configure your Twitter consumer key and secret in the <strong>_AppStart.cshtml</strong>
+                    page of the sample site. </li>
+                <li>Run the sample! It contains code samples and examples of the features provided by
+                    the helper.</li>
+            </ol>
+            <h3>
+                Other Useful Resources</h3>
+			<p>
+                Don't miss the helper's <a href="http://www.youtube.com/watch?v=HHYsKhY8qEk">getting started screencast</a>.
+            </p>
+            <p>
+                You can find more information about the Twitter API in <a href="http://dev.twitter.com/doc">
+                    http://dev.twitter.com/doc</a>.
+            </p>
+            <p>
+                Learn more on WebMatrix, ASP.NET Web Pages and the Razor Syntax <a href="http://www.microsoft.com/web/webmatrix/learn/">
+                    with the WebMatrix tutorials</a>.
+            </p>
+        </div>
+        <ul class="footer">
+            <li>We're always looking for <a href="mailto:webapp@microsoft.com">bugs, feedback and
+                suggestions!</a></li>
+            <li>&copy; 2010-2011 Microsoft Corporation. Powered by IIS Express.</li>
+        </ul>
+    </div>
+</body>
+</html>

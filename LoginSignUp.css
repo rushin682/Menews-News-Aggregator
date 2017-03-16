@@ -1,0 +1,72 @@
+
+/*Login*/
+
+.login button {
+text-decoration: none;
+color: white;
+padding: 10px;
+transition: all 0.3s ease-out;
+cursor: pointer;
+background-color: #005555;
+border-radius: 0px;
+border: 0px;
+display:inline-block;
+width:40%;
+border:0px;
+}
+.login button:hover {
+  background: #5FD367;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  display:none;
+  opacity: 0;
+}
+/*.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}*/
+
+.popup {
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: auto;
+ 
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+
+div.form{
+      clear:left;
+    font-family: Arial, sans-serif;
+    }
+
+.boxclose button {
+    float: right;
+    cursor: pointer;
+    color: #8a8888;
+    border: 0px solid #AEAEAE;
+    border-radius: 0;
+    background: rgb(255, 255, 255);
+    font-size: 15px;
+    font-weight: bold;
+    display: inline-block;
+    line-height: 0px;
+    padding: 0;
+}
+
+/* end of login */

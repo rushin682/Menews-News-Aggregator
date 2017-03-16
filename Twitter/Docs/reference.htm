@@ -1,0 +1,523 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Twitter Helper for WebMatrix - Reference</title>
+    <link href="content/Site.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="content/images/webx-icon.png" alt="WebMatrix" />
+            <img src="content/images/twitter-logo.png" alt="Twitter Logo" class="partnerLogo" />
+            <h1>
+                Microsoft WebMatrix Helpers</h1>
+            <h2>
+                Twitter Helper - Reference</h2>
+        </div>
+        <div class="content">
+            <div class="navLinks">
+                <a href="startHere.htm">Start Here</a> | <a href="reference.htm">Helper Reference</a>
+            </div>
+            <h3>
+                Helper Methods</h3>
+			<p><em>Note: Current version does not support the full Twitter API.</em></p>
+            <p>
+                The helper mainly consists of a <strong>Twitter.cshtml</strong> file that should
+                be placed in the <strong>App_Code</strong> folder of your WebMatrix site, a <strong>
+                    TwitterApi.dll</strong> library to be added to the <strong>Bin</strong> folder,
+                and a <strong>Twitter</strong> folder with styles and pages for handling authentication.
+            </p>
+            <table class="memberdecls">
+                <tr>
+                    <th class="memItemLeft">
+                        &nbsp;
+                    </th>
+                    <th class="memItemRight">
+                        Method
+                    </th>
+                    <th class="memItemRight">
+                        Requires Initialization
+                    </th>
+                </tr>
+                <tr>
+                    <td class="memItemLeft">
+                        static void
+                    </td>
+                    <td class="memItemRight">
+                        <strong>Initialize</strong> (string consumerKey, string consumerSecret)
+                    </td>
+                    <td class="memItemRight">
+                        -
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mdescLeft">
+                        &nbsp;
+                    </td>
+                    <td class="mdescRight">
+                        Initializes the Twitter helper with the consumer key and secret values. Initialization
+                        is required to access the Twitter API methods.
+                    </td>
+                    <td class="mdescRight">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td class="memItemLeft">
+                        static OAuthToken
+                    </td>
+                    <td class="memItemRight">
+                        <strong>GetAccessToken</strong> ()
+                    </td>
+                    <td class="memItemRight">
+                        Yes
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mdescLeft">
+                        &nbsp;
+                    </td>
+                    <td class="mdescRight">
+                        Returns the Access Token. This method should be called in the page corresponding
+                        to the callback url.
+                    </td>
+                    <td class="mdescRight">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td class="memItemLeft">
+                        static List&lt;<a href="http://dev.twitter.com/doc/get/statuses/public_timeline">Status</a>&gt;
+                    </td>
+                    <td class="memItemRight">
+                        <b>GetPublicTimeline</b> ([bool trimUser], [bool includeEntities])
+                    </td>
+                    <td class="memItemRight">
+                        Yes
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mdescLeft">
+                        &nbsp;
+                    </td>
+                    <td class="mdescRight">
+                        Returns the most recent statuses, including retweets if they exist, from non-protected
+                        users.
+                    </td>
+                    <td class="mdescRight">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td class="memItemLeft">
+                        static List&lt;<a href="http://dev.twitter.com/doc/get/statuses/home_timeline">Status</a>&gt;
+                    </td>
+                    <td class="memItemRight">
+                        <strong>GetHomeTimeline</strong> (string token, string secret, [long sinceId], [long
+                        maxId], [int count], [int page], [bool trimUser], [bool includeEntities])
+                    </td>
+                    <td class="memItemRight">
+                        Yes
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mdescLeft">
+                        &nbsp;
+                    </td>
+                    <td class="mdescRight">
+                        Returns the most recent statuses, including retweets if they exist, posted by the
+                        authenticating user and the user's they follow.
+                    </td>
+                    <td class="mdescRight">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td class="memItemLeft">
+                        static List&lt;<a href="http://dev.twitter.com/doc/get/statuses/friends_timeline">Status</a>&gt;
+                    </td>
+                    <td class="memItemRight">
+                        <strong>GetFriendsTimeline</strong> (string token, string secret, [long sinceId],
+                        [long maxId], [int count], [int page], [bool trimUser], [bool includeRetweets],
+                        [bool includeEntities])
+                    </td>
+                    <td class="memItemRight">
+                        Yes
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mdescLeft">
+                        &nbsp;
+                    </td>
+                    <td class="mdescRight">
+                        Returns the most recent statuses posted by the authenticating user and the user's
+                        they follow. This method is identical to GetHomeTimeline(), except that this method
+                        will only include retweets if the includeRetweets parameter is set.
+                    </td>
+                    <td class="mdescRight">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td class="memItemLeft">
+                        static List&lt;<a href="http://dev.twitter.com/doc/get/statuses/user_timeline">Status</a>&gt;
+                    </td>
+                    <td class="memItemRight">
+                        <strong>GetUserTimeline</strong> (string token, string secret, [long userId], [string
+                        screenName], [long sinceId], [long maxId], [int count], [int page], [bool trimUser],
+                        [bool includeRetweets], [bool includeEntities])
+                    </td>
+                    <td class="memItemRight">
+                        Yes
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mdescLeft">
+                        &nbsp;
+                    </td>
+                    <td class="mdescRight">
+                        Returns the most recent statuses posted by the authenticating user. It is also possible
+                        to request another user's timeline by using the screen_name or user_id parameter.
+                        The other users timeline will only be visible if they are not protected, or if the
+                        authenticating user's follow request was accepted by the protected user.
+                    </td>
+                    <td class="mdescRight">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td class="memItemLeft">
+                        static List&lt;<a href="http://dev.twitter.com/doc/get/statuses/user_timeline">Status</a>&gt;
+                    </td>
+                    <td class="memItemRight">
+                        <strong>GetUserTimeline</strong> ([long userId], [string screenName], [long sinceId],
+                        [long maxId], [int count], [int page], [bool trimUser], [bool includeRetweets],
+                        [bool includeEntities])
+                    </td>
+                    <td class="memItemRight">
+                        Yes
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mdescLeft">
+                        &nbsp;
+                    </td>
+                    <td class="mdescRight">
+                        Returns the timeline of the specified user. The user's timeline will only be visible
+                        if they are not protected.
+                    </td>
+                    <td class="mdescRight">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td class="memItemLeft">
+                        static List&lt;<a href="http://dev.twitter.com/doc/get/statuses/mentions">Status</a>&gt;
+                    </td>
+                    <td class="memItemRight">
+                        <strong>GetMentions</strong> (string token, string secret, [long sinceId], [long
+                        maxId], [int count], [int page], [bool trimUser], [bool includeRetweets], [bool
+                        includeEntities])
+                    </td>
+                    <td class="memItemRight">
+                        Yes
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mdescLeft">
+                        &nbsp;
+                    </td>
+                    <td class="mdescRight">
+                        Returns the most recent mentions (status containing @username) for the authenticating
+                        user.
+                    </td>
+                    <td class="mdescRight">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td class="memItemLeft">
+                        static List&lt;<a href="http://dev.twitter.com/doc/get/statuses/retweeted_by_me">Retweet</a>&gt;
+                    </td>
+                    <td class="memItemRight">
+                        <strong>GetRetweetedByMe</strong> (string token, string secret, [long sinceId],
+                        [long maxId], [int count], [int page], [bool trimUser], [bool includeEntities])
+                    </td>
+                    <td class="memItemRight">
+                        Yes
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mdescLeft">
+                        &nbsp;
+                    </td>
+                    <td class="mdescRight">
+                        Returns the most recent retweets posted by the authenticating user.
+                    </td>
+                    <td class="mdescRight">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td class="memItemLeft">
+                        static List&lt;<a href="http://dev.twitter.com/doc/get/statuses/retweeted_to_me">Retweet</a>&gt;
+                    </td>
+                    <td class="memItemRight">
+                        <strong>GetRetweetedToMe</strong> (string token, string secret, [long sinceId],
+                        [long maxId], [int count], [int page], [bool trimUser], [bool includeEntities])
+                    </td>
+                    <td class="memItemRight">
+                        Yes
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mdescLeft">
+                        &nbsp;
+                    </td>
+                    <td class="mdescRight">
+                        Returns the most recent retweets posted by users the authenticating user follow.
+                    </td>
+                    <td class="mdescRight">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td class="memItemLeft">
+                        static List&lt;<a href="http://dev.twitter.com/doc/get/statuses/retweets_of_me">Status</a>&gt;
+                    </td>
+                    <td class="memItemRight">
+                        <strong>GetRetweetsOfMe</strong> (string token, string secret, [long sinceId], [long
+                        maxId], [int count], [int page], [bool trimUser], [bool includeEntities])
+                    </td>
+                    <td class="memItemRight">
+                        Yes
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mdescLeft">
+                        &nbsp;
+                    </td>
+                    <td class="mdescRight">
+                        Returns the most recent tweets of the authenticated user that have been retweeted
+                        by others.
+                    </td>
+                    <td class="mdescRight">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td class="memItemLeft">
+                        static DateTime
+                    </td>
+                    <td class="memItemRight">
+                        <strong>ParseDateTime</strong> (string date)
+                    </td>
+                    <td class="memItemRight">
+                        Yes
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mdescLeft">
+                        &nbsp;
+                    </td>
+                    <td class="mdescRight">
+                        Converts a datetime string from Twitter to a DateTime object.
+                    </td>
+                    <td class="mdescRight">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td class="memItemLeft">
+                        @helper
+                    </td>
+                    <td class="memItemRight">
+                        <strong>LoginButton</strong> ([string callbackUrl], [string buttonStyle], [string
+                        buttonSize])
+                    </td>
+                    <td class="memItemRight">
+                        Yes
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mdescLeft">
+                        &nbsp;
+                    </td>
+                    <td class="mdescRight">
+                        Shows the Twitter login button.
+                    </td>
+                    <td class="mdescRight">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td class="memItemLeft">
+                        @helper
+                    </td>
+                    <td class="memItemRight">
+                        <strong>TweetButton</strong> ([DataCount dataCount], [string tweetText], [string
+                        url], [Languages language], [string username], [string relatedUsername], [string
+                        relatedUserDescription])
+                    </td>
+                    <td class="memItemRight">
+                        No
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mdescLeft">
+                        &nbsp;
+                    </td>
+                    <td class="mdescRight">
+                        Shows the Tweet button.
+                    </td>
+                    <td class="mdescRight">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td class="memItemLeft">
+                        @helper
+                    </td>
+                    <td class="memItemRight">
+                        <strong>FollowButton</strong> (string username, [FollowStyles followStyle], [FollowColors
+                        followColor])
+                    </td>
+                    <td class="memItemRight">
+                        No
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mdescLeft">
+                        &nbsp;
+                    </td>
+                    <td class="mdescRight">
+                        Shows the Follow button.
+                    </td>
+                    <td class="mdescRight">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td class="memItemLeft">
+                        @helper
+                    </td>
+                    <td class="memItemRight">
+                        <strong>Profile</strong> (string username, [int width], [int height], [string backgroundShellColor],
+                        [string shellColor], [string tweetsBackgroundColor], [string tweetsColor], [string
+                        tweetsLinksColor], [int numberOfTweets], [bool scrollBar], [bool loop], [bool live],
+                        [bool hashTags], [bool timestamp], [bool avatars], [WidgetBehaviors behavior], [int
+                        interval])
+                    </td>
+                    <td class="memItemRight">
+                        No
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mdescLeft">
+                        &nbsp;
+                    </td>
+                    <td class="mdescRight">
+                        Shows the Twitter Profile widget.
+                    </td>
+                    <td class="mdescRight">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td class="memItemLeft">
+                        @helper
+                    </td>
+                    <td class="memItemRight">
+                        <strong>Search</strong> (string searchQuery, [int width], [int height], [string
+                        title], [string caption], [string backgroundShellColor], [string shellColor], [string
+                        tweetsBackgroundColor], [string tweetsColor], [string tweetsLinksColor], [bool scrollBar],
+                        [bool loop], [bool live], [bool hashTags], [bool timestamp], [bool avatars], [bool
+                        topTweets], [WidgetBehaviors behavior], [int interval])
+                    </td>
+                    <td class="memItemRight">
+                        No
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mdescLeft">
+                        &nbsp;
+                    </td>
+                    <td class="mdescRight">
+                        Shows the Twitter Search widget.
+                    </td>
+                    <td class="mdescRight">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td class="memItemLeft">
+                        @helper
+                    </td>
+                    <td class="memItemRight">
+                        <strong>Faves</strong> (string username, [int width], [int height], [string title],
+                        [string caption], [string backgroundShellColor], [string shellColor], [string tweetsBackgroundColor],
+                        [string tweetsColor], [string tweetsLinksColor], [int numberOfTweets], [bool scrollBar],
+                        [bool loop], [bool live], [bool hashTags], [bool timestamp], [bool avatars], [bool
+                        topTweets], [WidgetBehaviors behavior], [int interval])
+                    </td>
+                    <td class="memItemRight">
+                        No
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mdescLeft">
+                        &nbsp;
+                    </td>
+                    <td class="mdescRight">
+                        Shows the Twitter List widget.
+                    </td>
+                    <td class="mdescRight">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td class="memItemLeft">
+                        @helper
+                    </td>
+                    <td class="memItemRight">
+                        <strong>List</strong> (string username, string list, [int width], [int height],
+                        [string title], [string caption], [string backgroundShellColor], [string shellColor],
+                        [string tweetsBackgroundColor], [string tweetsColor], [string tweetsLinksColor],
+                        [int numberOfTweets], [bool scrollBar], [bool loop], [bool live], [bool hashTags],
+                        [bool timestamp], [bool avatars], [bool topTweets], [WidgetBehaviors behavior],
+                        [int interval])
+                    </td>
+                    <td class="memItemRight">
+                        No
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mdescLeft">
+                        &nbsp;
+                    </td>
+                    <td class="mdescRight">
+                        Shows the Twitter List widget.
+                    </td>
+                    <td class="mdescRight">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td class="memItemLeft">
+                    </td>
+                    <td class="memItemRight">
+                    </td>
+                    <td class="memItemRight">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <ul class="footer">
+            <li>We're always looking for <a href="mailto:webapp@microsoft.com">bugs, feedback and
+                suggestions!</a></li>
+            <li>&copy; 2010-2011 Microsoft Corporation. Powered by IIS Express.</li>
+        </ul>
+    </div>
+</body>
+</html>

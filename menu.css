@@ -1,0 +1,125 @@
+body{
+   /*background-color: rgb(171, 175, 175);*/
+   background-color: white;
+}
+
+div.menu_horizontal
+{
+    top:0px;
+    width:100%;
+    background-color:#005555;
+    position:fixed;
+}
+.type a
+{
+    float:left;
+    top: 0px;
+    height: 35px;
+    display: inline-block;
+    padding: 0 20px;
+    margin-right:1px; 
+    font: normal 15px 'Century Gothic';
+    line-height: 34px;
+    color:white;
+    border:0px;
+    background-color:#005555;
+    text-decoration:none;
+    transition: all 0.3s ease-out;
+
+}
+.mh
+{
+    float:right;
+    top: 0px;
+    height: 35px;
+    display: inline-block;
+    padding: 0 20px;
+    margin-right:1px; 
+    font: normal 15px 'Century Gothic';
+    line-height: 34px;
+    color:white;
+    border:0px;
+    background-color:#005555;
+    
+    text-decoration:none;
+    transition: all 0.3s ease-out;
+
+}
+
+.Users
+{
+    float:right;
+    top: 0px;
+    height: 35px;
+    display: inline-block;
+    padding: 0 20px;
+    margin-right:1px; 
+    font: normal 15px Arial;
+    line-height: 34px;
+    color:white;
+    border:0px;
+    background-color:#005555;
+    
+    text-decoration:none;
+    transition: all 0.3s ease-out;
+
+}
+.type button:hover,.Users button:hover, div.menu_horizontal button.current,.menu_horizontal a:hover
+{
+    cursor:pointer;
+    line-height: 35px;
+    color:#5FD367;
+}
+.type a:hover{
+    color:#5FD367;
+}
+
+
+
+
+#twitter{
+    margin-top: 35px;
+    margin-bottom: 25px;
+    margin-right: 0px;
+}
+
+#news{
+    margin-top: 35px;
+    margin-left: 0px;
+    width: 75%;
+    height: 100%;
+    margin-bottom: 25px;
+}
+
+
+@media screen and (max-width: 1920px){
+    /*Laptop landscape*/
+    html { 
+        font-size:100%;
+    } 
+    .box{
+    width: 70%;
+    
+  }
+    img{
+        max-width:100%;
+    }
+  .popup{
+    width: 70%;
+  }
+    /*landscape ends */
+  
+}
+@media (min-width: 640px) { body {font-size:1rem;} } 
+@media (min-width:960px) { body {font-size:1.2rem;} } 
+
+    input{
+        border:2px solid #005555;
+       /* border-radius: 20px/50px; */   
+    }
+
+img{
+    width: 100px;
+    height: 100px;
+}
+
